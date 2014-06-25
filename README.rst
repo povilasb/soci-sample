@@ -6,7 +6,7 @@ This is basic sample using `SOCI <https://github.com/soci/soci>`_ (Simple
 Open Call Interface) to access sqlite3 DB.
 
 .. note:: invoke ``make`` twice. For some reasons SOCI tries to run tests
-        although ``set(SOCI_TESTS OFF) is called. After compiling for the
+        although ``set(SOCI_TESTS OFF)`` is called. After compiling for the
         second time tests are not run.
 
 
