@@ -2,6 +2,7 @@
 #include <string>
 #include <list>
 #include <utility>
+#include <cstdio>
 
 #include <soci.h>
 #include <soci-sqlite3.h>
@@ -14,7 +15,9 @@ using namespace soci;
 int
 main(void)
 {
-	session sql(sqlite3, "dbname=test.db");
+	string db_name = "test.db";
+	remove(db_name.c_str());
+	session sql(sqlite3, "dbname=" + db_name);
 	sql << "create table if not exists users(id text primary key, "
 		"pass text);";
 
