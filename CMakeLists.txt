@@ -20,8 +20,13 @@ add_subdirectory(${SOCI_ROOT_DIR})
 
 add_executable(${PROJECT_EXEC} "${SRC_FILES}")
 
-list(APPEND SOCI_LIBS "soci_core" "soci_sqlite3")
+# Dynamic linking.
+#list(APPEND SOCI_LIBS "soci_core" "soci_sqlite3")
+
+# Static linking.
+list(APPEND SOCI_LIBS "soci_core_static" "soci_sqlite3_static")
 add_dependencies(${PROJECT_EXEC} ${SOCI_LIBS})
-target_link_libraries(${PROJECT_EXEC} ${SOCI_LIBS})
+
+target_link_libraries(${PROJECT_EXEC} ${SOCI_LIBS} libsqlite3.a dl pthread)
 include_directories("${SOCI_ROOT_DIR}/core")
 include_directories("${SOCI_ROOT_DIR}/backends/sqlite3")
