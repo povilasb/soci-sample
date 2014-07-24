@@ -9,6 +9,8 @@ Open Call Interface) to access sqlite3 DB.
         although ``set(SOCI_TESTS OFF)`` is called. After compiling for the
         second time tests are not run.
 
+Lib SOCI is linked dinamically.
+
 
 Dependencies
 ============
